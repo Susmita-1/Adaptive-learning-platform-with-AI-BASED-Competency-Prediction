@@ -7,22 +7,20 @@ function Dashboard() {
     localStorage.removeItem("isAuth");
     navigate("/login");
   };
-  const startQuiz = () => {
-    navigate("/quiz");
-  };
 
   return (
     <div style={{ padding: "40px" }}>
       <h2>Welcome to Dashboard</h2>
-
-      <p>Progress: Intermediate</p>
-      <p>Recommended Lesson: Probability Basics</p>
-      
-       <br />
-      <button onClick={startQuiz}>Start Quiz</button>
-
+      <p>Current Level: Beginner</p>
       <br />
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={() => navigate("/quiz")}>
+        Start Adaptive Quiz
+      </button>
+        <br /><br />
+
+      <button onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 }

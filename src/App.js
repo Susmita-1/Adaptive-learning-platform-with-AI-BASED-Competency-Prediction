@@ -5,6 +5,8 @@ import Quiz from "./pages/quiz";
 import Analysis from "./pages/analysis";
 import PrivateRoute from "./routes/privateRoutes";
 
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,9 +15,8 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
+            <PrivateRoute><Dashboard /></PrivateRoute>
+
           }
         />
         <Route
@@ -30,9 +31,7 @@ function App() {
         <Route
           path="/analysis"
           element={
-            <PrivateRoute>
-              <Analysis />
-            </PrivateRoute>
+            <PrivateRoute> <Analysis /> </PrivateRoute>
           }
         />
       </Routes>
