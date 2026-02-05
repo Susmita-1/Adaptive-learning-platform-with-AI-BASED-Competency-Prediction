@@ -1,9 +1,13 @@
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const isAuth = localStorage.getItem("isAuth")  === "true";
+  const isAuth = sessionStorage.getItem("isAuth");
 
-  return isAuth ? children : <Navigate to="/" replace />;
+  if (isAuth === "true") {
+    return children; // ✅ MUST return children directly
+  }
+
+  return <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;

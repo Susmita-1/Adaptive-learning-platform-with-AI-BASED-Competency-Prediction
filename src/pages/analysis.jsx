@@ -1,28 +1,29 @@
+import Navbar from "../components/navbar";
+import Card from "../components/card";
+
 function Analysis() {
   const score = localStorage.getItem("quizScore");
 
-  let level = "";
-  let recommendation = "";
-
-  if (score >= 3) {
-    level = "Advanced";
-    recommendation = "You can move to advanced topics.";
-  } else if (score == 2) {
-    level = "Intermediate";
-    recommendation = "Revise basics and practice more.";
-  } else {
-    level = "Beginner";
-    recommendation = "Start with fundamental lessons.";
-  }
-
-
   return (
-    <div style={{ padding: "40px" }}>
-     <h2>Competency Analysis</h2>
-      <p><b>Score:</b> {score}</p>
-      <p><b>Level:</b> {level}</p>
-      <p><b>AI Recommendation:</b> {recommendation}</p>
-    </div>
+    <>
+      <Navbar />
+      <div style={{ padding: "40px",background: "#f4f6f8", minHeight: "100vh" }}>
+        <h2>Competency Analysis</h2>
+         <Card title="Strength Areas">
+          <p>✔ Algebra</p>
+          <p>✔ Linear Equations</p>
+        </Card>
+
+        <Card title="Weak Areas">
+          <p>❌ Statistics</p>
+          <p>❌ Probability</p>
+        </Card>
+
+        <Card title="AI Recommendation">
+          <p>Focus on basic statistics concepts before proceeding.</p>
+        </Card>
+      </div>
+    </>
   );
 }
 
