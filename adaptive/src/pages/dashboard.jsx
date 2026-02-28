@@ -1,11 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Dashboard() {
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false); // ✅ added loading state
 
   const handlePredict = async () => {
     try {
+      setLoading(true); // ✅ start loading
+
       const response = await axios.post(
         "http://127.0.0.1:8000/predict",
         {
@@ -19,6 +23,8 @@ function Dashboard() {
 
     } catch (error) {
       console.error("Error calling ML API:", error);
+    } finally {
+      setLoading(false); // ✅ stop loading
     }
   };
 
@@ -27,10 +33,13 @@ function Dashboard() {
       <h2>Dashboard</h2>
 
       <button onClick={handlePredict}>
-        Predict My Level
+        {loading ? "Predicting..." : "Predict My Level"}
       </button>
 
-      {result && (
+      {/* ✅ Spinner inside return */}
+      {loading && <LoadingSpinner />}
+
+      {result && !loading && (
         <h3 style={{ marginTop: "20px" }}>
           Predicted Level: {result}
         </h3>
