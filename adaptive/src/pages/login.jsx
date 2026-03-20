@@ -50,7 +50,7 @@ function Login() {
       <button onClick={handleLogin}>Login</button>
 
       <p style={{ marginTop: "10px", color: "gray" }}>
-        (Use: student@gmail.com / 1234)
+       
       </p>
       </Card>
     </div>
