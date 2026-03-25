@@ -11,7 +11,7 @@ function Dashboard() {
       setLoading(true); // ✅ start loading
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict",
+        "http://127.0.0.1:8001/api/predict",
         {
           score: 80,
           accuracy: 75,
