@@ -1,0 +1,18 @@
+# FastAPI framework
+fastapi==0.104.1
+
+# ASGI server
+uvicorn==0.24.0
+
+# Data validation
+pydantic==2.5.0
+pydantic-core==2.14.1
+
+# Scientific computing
+numpy==1.24.3
+
+# For handling form data
+python-multipart==0.0.6
+
+# Optional: for better logging
+python-dotenv==1.0.0

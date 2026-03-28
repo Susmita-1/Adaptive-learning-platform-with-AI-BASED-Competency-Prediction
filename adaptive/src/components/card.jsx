@@ -1,20 +1,17 @@
+// components/card.jsx
 function Card({ title, children }) {
   return (
-    <div style={styles.card}>
-      <h3>{title}</h3>
-      <div>{children}</div>
+    <div style={{
+      background: "white",
+      borderRadius: "10px",
+      padding: "20px",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+      marginBottom: "20px"
+    }}>
+      <h3 style={{ margin: "0 0 15px 0", color: "#333" }}>{title}</h3>
+      {children}
     </div>
   );
 }
-
-const styles = {
-  card: {
-    background: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-    marginBottom: "20px"
-  }
-};
 
 export default Card;
