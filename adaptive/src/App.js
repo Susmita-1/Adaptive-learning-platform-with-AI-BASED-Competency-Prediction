@@ -4,7 +4,7 @@ import Dashboard from "./pages/dashboard";
 import Quiz from "./pages/quiz";
 import Analysis from "./pages/analysis";
 import PrivateRoute from "./routes/privateRoutes";
-
+import Register from './pages/Register';
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/dashboard"
           element={

@@ -7,14 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class Prediction extends Model
 {
     protected $fillable = [
+        'user_id',
         'score',
-        'accuracy',
+        'total_questions',
+        'percentage',
+        'weighted_percentage',
         'time_taken',
-        'predicted_level',
-        'answers'  // Add this field
+        'iq_score',
+        'iq_level',
+        'competency_level',
+        'category_performance',
+        'difficulty_performance',
+        'answers',
+        'recommendations'
     ];
     
     protected $casts = [
-        'answers' => 'array', // Automatically cast JSON to array
+        'category_performance' => 'array',
+        'difficulty_performance' => 'array',
+        'answers' => 'array',
+        'recommendations' => 'array'
     ];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
